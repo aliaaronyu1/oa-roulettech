@@ -10,8 +10,8 @@ const Navigation = () => {
                 <Link to="/">
                     Home
                 </Link>
-                <Link to="/h">
-                    About
+                <Link to="/history">
+                    History
                 </Link>
 
             </div>
