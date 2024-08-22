@@ -13,7 +13,7 @@ const Exercise = ({exerciseName}) => {
 
             <div>
                 {workoutSet.map((set) => (
-                    <WorkoutSet setNumber={set.setNumber} />
+                    <WorkoutSet key={set.setNumber} setNumber={set.setNumber} />
                 ))}
                 <button onClick={addWorkoutSet}>Add Set</button>
 
