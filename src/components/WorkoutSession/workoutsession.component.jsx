@@ -11,13 +11,15 @@ const WorkoutSession = () => {
         {value: 'pullups', label: 'Pull Ups'}
     ]
 
-    //exercises for current session
     const [exercises, setExercises] = useState([]);
     const [isConfigureExercise, setIsConfigureExercise] = useState(false);
     const [newExerciseConfig, setNewExerciseConfig] = useState({ name: '' })
 
     const handleAddExercise = () => {
         setIsConfigureExercise(true);
+    }
+    const handleCancelExercise = () => {
+        setIsConfigureExercise(false);
     }
     const handleConfigChange = (e) => {
         setNewExerciseConfig({
@@ -35,6 +37,7 @@ const WorkoutSession = () => {
         setIsConfigureExercise(false);
         setNewExerciseConfig({ name: '' })
     }
+    
     return (
         <div>
             <h1>
@@ -50,6 +53,7 @@ const WorkoutSession = () => {
                 <form onSubmit={handleExerciseConfig}>
                     <Creatable options={defaultExercises} onChange={handleConfigChange}/>
                     <button type="submit">Add</button>
+                    <button onClick={handleCancelExercise}>Cancel</button>
                 </form>
             )}
 
