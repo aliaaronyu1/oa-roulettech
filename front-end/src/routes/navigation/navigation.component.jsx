@@ -10,10 +10,6 @@ const Navigation = () => {
                 <Link to="/">
                     Home
                 </Link>
-                <Link to="/history">
-                    History
-                </Link>
-
             </div>
             <Outlet/>
         </Fragment>

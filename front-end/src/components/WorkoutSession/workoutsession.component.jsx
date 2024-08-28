@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Exercise from "../Exercise/exercise.component";
 import Creatable from 'react-select/creatable';
+import { WorkoutContext } from "../../contexts/workout.context";
+import { useContext } from "react";
 
 const WorkoutSession = () => {
     const defaultExercises = [
@@ -11,6 +13,7 @@ const WorkoutSession = () => {
         {value: 'pullups', label: 'Pull Ups'}
     ]
 
+    const { setWorkout } = useContext(WorkoutContext);
     const [exercises, setExercises] = useState([]);
     const [isConfigureExercise, setIsConfigureExercise] = useState(false);
     const [newExerciseConfig, setNewExerciseConfig] = useState({ name: '' })
@@ -58,7 +61,7 @@ const WorkoutSession = () => {
             )}
 
             <div>
-                <button>Finish Workout</button>
+                <button onClick={() => setWorkout(false)}>Finish Workout</button>
             </div>
         </div>
     )
